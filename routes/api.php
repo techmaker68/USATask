@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 
 Route::post('/register', 'registercontroller@Register');
@@ -24,11 +24,14 @@ Route::post('/login', 'registercontroller@login');
 
 
 // category Crud Apis
+Route::post('category', 'CategoryController@index');
 Route::post('category/create', 'CategoryController@Register');
 Route::post('category/update/{id}', 'CategoryController@update');
 Route::delete('category/delete/{id}', 'CategoryController@destroy');
 
 //Brand crud Apis
+
+Route::post('brands', 'BrandController@index');
 Route::post('brand/create', 'BrandController@Register');
 Route::post('brand/update/{id}', 'BrandController@update');
 Route::delete('brand/delete/{id}', 'BrandController@destroy');

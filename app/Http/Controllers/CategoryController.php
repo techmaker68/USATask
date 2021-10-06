@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Validator;
 class CategoryController extends Controller
 {
 
+    public function index()
+    {
+        $categories = Category::all();
+
+        return response()->json($categories, 200);
+    }
+
+
     public function Register(Request $request)
     {
         $rules = [

@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Validator;
 class BrandController extends Controller
 {
     //
+    public function index()
+    {
+        $brand = Brand::all();
+
+        return response()->json($brand, 200);
+    }
 
     public function Register(Request $request)
     {
